@@ -37,32 +37,9 @@ void insertionSort(){
 	}
 }
 
-void createRoutes() {
-	routes[0] = { 3673, "plane", "Pinsk", 12.45, 13.43 };
-	routes[1] = { 2345, "car", "Bonn", 06.45, 23.14 };
-	routes[2] = { 9139, "bus", "London", 13.16, 23.59 };
-	routes[3] = { 1947, "train", "New York", 01.16, 18.34 };
-	routes[4] = { 2038, "minibus", "Paris", 07.18, 22.47 };
-	routes[5] = { 1111, "plane", "Madrid", 18.45, 21.38 };
-	routes[6] = { 8645, "car", "Minsk", 22.22, 23.59 };
-}
-
-void display() {
-	for (int i = 0; i < 7; i++) {
-		cout << routes[i].number << " ";
-		cout << routes[i].type << " ";
-		cout << routes[i].destination << " ";
-		cout << routes[i].departureTime << " ";
-		cout << routes[i].arrivalTime << " ";
-		cout << "\n";
-	}
-}
-
-/* This function takes last element as pivot, places
-   the pivot element at its correct position in sorted
-	array, and places all smaller (smaller than pivot)
-   to left of pivot and all greater elements to right
-   of pivot */
+/* takes last element as pivot, places the pivot element at its correct
+position in sorted array, places all smaller elements to the left of pivot 
+and all greater elements to the right of pivot */
 int partition(int low, int high){
 
 	int pivot = routes[high].departureTime;    // pivot 
@@ -91,6 +68,27 @@ void quickSort( int low, int high){
 		// partition and after partition 
 		quickSort(low, pi - 1);
 		quickSort(pi + 1, high);
+	}
+}
+
+void createRoutes() {
+	routes[0] = { 3673, "plane", "Pinsk", 12.45, 13.43 };
+	routes[1] = { 2345, "car", "Bonn", 06.45, 23.14 };
+	routes[2] = { 9139, "bus", "London", 13.16, 23.59 };
+	routes[3] = { 1947, "train", "New York", 01.16, 18.34 };
+	routes[4] = { 2038, "minibus", "Paris", 07.18, 22.47 };
+	routes[5] = { 1111, "plane", "Madrid", 18.45, 21.38 };
+	routes[6] = { 8645, "car", "Minsk", 22.22, 23.59 };
+}
+
+void display() {
+	for (int i = 0; i < 7; i++) {
+		cout << routes[i].number << " ";
+		cout << routes[i].type << " ";
+		cout << routes[i].destination << " ";
+		cout << routes[i].departureTime << " ";
+		cout << routes[i].arrivalTime << " ";
+		cout << "\n";
 	}
 }
 
